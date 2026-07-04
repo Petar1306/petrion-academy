@@ -1,0 +1,82 @@
+/* ============================================
+   Petrion Academy - Global theme
+   Dark background + electric cyan accents
+   ============================================ */
+
+:root {
+  --petrion-cyan: #1699CD;
+  --petrion-cyan-hover: #1280ad;
+  --petrion-bg: #1A1F22;
+  --petrion-bg-elevated: #22282c;
+  --petrion-grey: #454F54;
+  --petrion-tan: #C4A882;
+  --petrion-text: #E8EDEF;
+  --petrion-text-muted: #9AA5AB;
+}
+
+body {
+  background-color: var(--petrion-bg);
+  color: var(--petrion-text);
+  min-height: 100vh;
+}
+
+/* Links & cyan accents */
+a { color: var(--petrion-cyan); }
+a:hover { color: var(--petrion-cyan-hover); }
+
+/* Buttons */
+.btn-petrion {
+  background-color: var(--petrion-cyan);
+  border-color: var(--petrion-cyan);
+  color: #fff;
+}
+.btn-petrion:hover {
+  background-color: var(--petrion-cyan-hover);
+  border-color: var(--petrion-cyan-hover);
+  color: #fff;
+}
+.btn-outline-petrion {
+  color: var(--petrion-cyan);
+  border-color: var(--petrion-cyan);
+}
+.btn-outline-petrion:hover {
+  background-color: var(--petrion-cyan);
+  color: #fff;
+}
+
+/* Cards & elevated surfaces */
+.card {
+  background-color: var(--petrion-bg-elevated);
+  border: 1px solid var(--petrion-grey);
+  color: var(--petrion-text);
+}
+
+/* Form controls on dark background */
+.form-control, .form-select {
+  background-color: var(--petrion-bg-elevated);
+  border-color: var(--petrion-grey);
+  color: var(--petrion-text);
+}
+.form-control:focus, .form-select:focus {
+  background-color: var(--petrion-bg-elevated);
+  border-color: var(--petrion-cyan);
+  color: var(--petrion-text);
+  box-shadow: 0 0 0 0.2rem rgba(22, 153, 205, 0.25);
+}
+.form-control::placeholder { color: var(--petrion-text-muted); }
+
+/* Navbar */
+.navbar-petrion {
+  background-color: var(--petrion-bg-elevated);
+  border-bottom: 2px solid var(--petrion-cyan);
+}
+.navbar-petrion .navbar-brand,
+.navbar-petrion .nav-link {
+  color: var(--petrion-text);
+}
+.navbar-petrion .nav-link:hover { color: var(--petrion-cyan); }
+
+/* Text helpers */
+.text-cyan { color: var(--petrion-cyan) !important; }
+.text-tan { color: var(--petrion-tan) !important; }
+.bg-elevated { background-color: var(--petrion-bg-elevated) !important; }
