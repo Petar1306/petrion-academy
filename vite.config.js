@@ -11,6 +11,7 @@ export default defineConfig({
         courses: resolve(__dirname, 'courses.html'),
         course: resolve(__dirname, 'course.html'),
         dashboard: resolve(__dirname, 'dashboard.html'),
+        admin: resolve(__dirname, 'admin.html'),
       },
     },
   },
