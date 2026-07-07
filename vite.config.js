@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
-// Multi-page app: entry points are added here as each HTML page is created.
 export default defineConfig({
   build: {
     rollupOptions: {
@@ -9,6 +8,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         register: resolve(__dirname, 'register.html'),
         login: resolve(__dirname, 'login.html'),
+        courses: resolve(__dirname, 'courses.html'),
       },
     },
   },
