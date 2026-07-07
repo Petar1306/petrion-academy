@@ -1,8 +1,8 @@
 import { supabase } from '../services/supabaseClient.js';
+import { getMyRole } from '../utils/guards.js';
 import logoUrl from '../assets/favicon.svg';
 
 // Renders the shared navbar into the element with id="navbar".
-// Shows different actions depending on auth state.
 export async function renderNavbar(activePage = '') {
   const navbarEl = document.getElementById('navbar');
   if (!navbarEl) return;
@@ -10,13 +10,25 @@ export async function renderNavbar(activePage = '') {
   const { data: { session } } = await supabase.auth.getSession();
   const isLoggedIn = !!session;
 
+  let role = null;
+  if (isLoggedIn) {
+    try { role = await getMyRole(); } catch (e) { console.error(e); }
+  }
+
   const link = (href, label, key) => `
     <li class="nav-item">
       <a class="nav-link ${activePage === key ? 'active text-cyan' : ''}" href="${href}">${label}</a>
     </li>`;
 
+  const panelBtn = (role === 'teacher' || role === 'admin')
+    ? `<a href="admin.html" class="btn btn-outline-petrion btn-sm me-2">
+         <i class="bi bi-speedometer2 me-1"></i> ${role === 'admin' ? 'Admin' : 'Panel'}
+       </a>`
+    : '';
+
   const authArea = isLoggedIn
-    ? `<a href="dashboard.html" class="btn btn-outline-petrion btn-sm me-2">
+    ? `${panelBtn}
+       <a href="dashboard.html" class="btn btn-outline-petrion btn-sm me-2">
          <i class="bi bi-mortarboard me-1"></i> My Learning
        </a>
        <button id="logoutBtn" class="btn btn-petrion btn-sm">
@@ -41,7 +53,7 @@ export async function renderNavbar(activePage = '') {
             ${link('courses.html', 'Courses', 'courses')}
             ${link('teachers.html', 'Teachers', 'teachers')}
           </ul>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center flex-wrap">
             ${authArea}
           </div>
         </div>
