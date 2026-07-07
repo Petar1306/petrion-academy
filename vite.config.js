@@ -10,6 +10,7 @@ export default defineConfig({
         login: resolve(__dirname, 'login.html'),
         courses: resolve(__dirname, 'courses.html'),
         course: resolve(__dirname, 'course.html'),
+        dashboard: resolve(__dirname, 'dashboard.html'),
       },
     },
   },

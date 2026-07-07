@@ -30,3 +30,25 @@ export async function enrollInCourse(courseId) {
   if (error) throw error;
   return data;
 }
+
+// Get all enrollments for the current user, with course + subject info.
+export async function getMyEnrollments() {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from('enrollments')
+    .select(`
+      id, status, created_at,
+      course:courses (
+        id, title, level, price_per_lesson, schedule_text,
+        subject:subjects ( name, icon ),
+        teacher:profiles ( full_name )
+      )
+    `)
+    .eq('student_id', user.id)
+    .order('created_at', { ascending: false });
+
+  if (error) throw error;
+  return data;
+}
