@@ -9,6 +9,7 @@ export default defineConfig({
         register: resolve(__dirname, 'register.html'),
         login: resolve(__dirname, 'login.html'),
         courses: resolve(__dirname, 'courses.html'),
+        course: resolve(__dirname, 'course.html'),
       },
     },
   },
