@@ -1,13 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="src/assets/favicon-32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>petrion-academy</title>
+    <title>Petrion Academy — Learn languages, maths & music</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="src/styles/main.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="navbar"></div>
+
+    <!-- Hero -->
+    <header class="py-5 text-center">
+      <div class="container py-5">
+        <h1 class="display-4 fw-bold">
+          Learn with <span class="text-cyan">Petrion Academy</span>
+        </h1>
+        <p class="lead text-secondary mx-auto mt-3" style="max-width: 640px;">
+          A family-run online academy for languages, mathematics and music.
+          Learn from dedicated tutors, at your own pace.
+        </p>
+        <div class="mt-4">
+          <a href="courses.html" class="btn btn-petrion btn-lg me-2">
+            <i class="bi bi-collection me-1"></i> Browse courses
+          </a>
+          <a href="register.html" class="btn btn-outline-petrion btn-lg">
+            Get started
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features -->
+    <section class="container pb-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 p-4 text-center">
+            <i class="bi bi-translate text-cyan fs-1 mb-3"></i>
+            <h5>Languages</h5>
+            <p class="text-secondary mb-0">
+              English, Spanish, Russian and Chinese with experienced teachers.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-4 text-center">
+            <i class="bi bi-calculator text-cyan fs-1 mb-3"></i>
+            <h5>Mathematics</h5>
+            <p class="text-secondary mb-0">
+              From primary to GCSE and A-Level, build real confidence.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-4 text-center">
+            <i class="bi bi-music-note-beamed text-cyan fs-1 mb-3"></i>
+            <h5>Music</h5>
+            <p class="text-secondary mb-0">
+              Theory and practice for young and grown-up learners alike.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center text-secondary py-4 border-top" style="border-color: var(--petrion-grey) !important;">
+      <div class="container">
+        &copy; 2026 Petrion Academy · Part of Petrion AI
+      </div>
+    </footer>
+
+    <script type="module" src="src/pages/index.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
