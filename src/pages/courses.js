@@ -1,3 +1,4 @@
+import '../bootstrap-setup.js';
 import { renderNavbar } from '../components/navbar.js';
 import { courseCardHtml } from '../components/courseCard.js';
 import { getSubjects, getPublishedCourses } from '../services/courseService.js';

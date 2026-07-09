@@ -1,3 +1,4 @@
+import '../bootstrap-setup.js';
 import { renderNavbar } from '../components/navbar.js';
 import { getMyEnrollments } from '../services/enrollmentService.js';
 import { supabase } from '../services/supabaseClient.js';

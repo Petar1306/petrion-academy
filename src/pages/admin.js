@@ -1,3 +1,4 @@
+import '../bootstrap-setup.js';
 import { renderNavbar } from '../components/navbar.js';
 import { requireLogin, getMyRole } from '../utils/guards.js';
 import {

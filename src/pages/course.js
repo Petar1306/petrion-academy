@@ -1,3 +1,4 @@
+import '../bootstrap-setup.js';
 import { renderNavbar } from '../components/navbar.js';
 import { getCourseById } from '../services/courseService.js';
 import { getMyEnrollment, enrollInCourse } from '../services/enrollmentService.js';

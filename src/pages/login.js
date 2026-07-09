@@ -1,3 +1,4 @@
+import '../bootstrap-setup.js';
 import { supabase } from '../services/supabaseClient.js';
 
 const loginBtn = document.getElementById('loginBtn');
