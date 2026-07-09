@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="src/assets/favicon-32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teacher Panel - Petrion Academy</title>
+    <title>Panel - Petrion Academy</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="src/styles/main.css" />
@@ -12,12 +12,27 @@
   <body>
     <div id="navbar"></div>
     <div class="container py-5">
-      <h1 class="h3 fw-bold mb-1">Teacher Panel</h1>
-      <p class="text-secondary">Your courses and enrolment requests.</p>
+      <h1 class="h3 fw-bold mb-1" id="panelTitle">Panel</h1>
+      <p class="text-secondary" id="panelSubtitle">Manage your courses and enrolments.</p>
       <div id="panelMessage"></div>
+
+      <!-- Admin-only area -->
+      <div id="adminArea" class="mb-5" style="display:none;">
+        <ul class="nav nav-tabs mb-3" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#usersTab">Users</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#coursesTab">All courses</button></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="usersTab"><div id="usersTable"></div></div>
+          <div class="tab-pane fade" id="coursesTab"><div id="coursesTable"></div></div>
+        </div>
+        <hr class="my-4" style="border-color: var(--petrion-grey);">
+        <h4 class="mb-3">My courses</h4>
+      </div>
+
       <div id="myCourses" class="mt-3"></div>
     </div>
-    <script type="module" src="src/pages/teacher.js"></script>
+    <script type="module" src="src/pages/admin.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
