@@ -1,3 +1,8 @@
+/* ============================================
+   Petrion Academy - Global theme
+   Dark background + electric cyan accents
+   ============================================ */
+
 :root {
   --petrion-cyan: #1699CD;
   --petrion-cyan-hover: #1280ad;
@@ -46,6 +51,7 @@ a:hover { color: var(--petrion-cyan-hover); }
   color: var(--petrion-text);
 }
 
+/* Form controls on dark background */
 .form-control, .form-select {
   background-color: var(--petrion-bg-elevated);
   border-color: var(--petrion-grey);
@@ -76,14 +82,28 @@ a:hover { color: var(--petrion-cyan-hover); }
 .bg-elevated { background-color: var(--petrion-bg-elevated) !important; }
 
 /* ============================================
-   Global page background image
+   Global page background image (subtle)
    ============================================ */
 body {
   background-image:
-    linear-gradient(rgba(26, 31, 34, 0.55), rgba(26, 31, 34, 0.65)),
+    linear-gradient(rgba(26, 31, 34, 0.92), rgba(26, 31, 34, 0.96)),
     url('/src/assets/hero.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+/* Lighter background overlay so the image shows through more */
+body {
+  background-image:
+    linear-gradient(rgba(26, 31, 34, 0.70), rgba(26, 31, 34, 0.80)),
+    url('/src/assets/hero.png') !important;
+}
+
+/* Even lighter background overlay */
+body {
+  background-image:
+    linear-gradient(rgba(26, 31, 34, 0.55), rgba(26, 31, 34, 0.65)),
+    url('/src/assets/hero.png') !important;
 }

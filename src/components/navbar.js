@@ -1,6 +1,6 @@
 import { supabase } from '../services/supabaseClient.js';
 import { getMyRole } from '../utils/guards.js';
-import logoUrl from '../assets/favicon.svg';
+import logoUrl from '../assets/petrion-logo-helmet.png';
 
 // Renders the shared navbar into the element with id="navbar".
 export async function renderNavbar(activePage = '') {
@@ -17,7 +17,7 @@ export async function renderNavbar(activePage = '') {
 
   const link = (href, label, key) => `
     <li class="nav-item">
-      <a class="nav-link ${activePage === key ? 'active text-cyan' : ''}" href="${href}">${label}</a>
+      <a class="nav-link px-3 ${activePage === key ? 'active text-cyan fw-semibold' : ''}" href="${href}">${label}</a>
     </li>`;
 
   const panelBtn = (role === 'teacher' || role === 'admin')
@@ -40,15 +40,15 @@ export async function renderNavbar(activePage = '') {
   navbarEl.innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-petrion sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-          <img src="${logoUrl}" alt="Petrion" width="32" height="32" class="me-2" />
-          Petrion <span class="text-cyan ms-1">Academy</span>
+        <a class="navbar-brand fw-bold d-flex align-items-center me-4" href="index.html">
+          <img src="${logoUrl}" alt="Petrion" height="70" class="me-2" />
+          <span class="fs-4">Petrion <span class="text-cyan">Academy</span></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             ${link('index.html', 'Home', 'home')}
             ${link('courses.html', 'Courses', 'courses')}
             ${link('teachers.html', 'Teachers', 'teachers')}
