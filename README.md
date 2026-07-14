@@ -10,7 +10,7 @@ Part of the **Petrion AI** brand.
 
 ## Live demo
 
-- **Live URL:** _(added after deployment)_
+- **Live URL:** https://petrionacademy.co.uk
 - **GitHub repo:** https://github.com/Petar1306/petrion-academy
 
 ### Demo credentials (password: `demo123`)
